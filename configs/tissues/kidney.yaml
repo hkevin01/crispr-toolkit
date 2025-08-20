@@ -1,0 +1,161 @@
+# Kidney-specific configuration for aging interventions
+
+tissue:
+  name: "kidney"
+  description: "Renal tissue configuration for aging research"
+  characteristics:
+    regenerative_capacity: "limited"
+    metabolic_activity: "high"
+    senescence_susceptibility: "very_high"
+    inflammation_prone: true
+    filtration_dependent: true
+
+# Gene expression signatures specific to kidney aging
+expression_signatures:
+  renal_senescence:
+    - "CDKN2A"  # p16
+    - "CDKN1A"  # p21
+    - "TP53"
+    - "GLB1"    # SA-β-gal
+    - "LMNB1"   # Lamin B1
+
+  renal_function:
+    - "NPHS1"   # Nephrin
+    - "NPHS2"   # Podocin
+    - "WT1"     # Wilms tumor 1
+    - "ACTN4"   # α-actinin-4
+    - "CD2AP"   # CD2-associated protein
+
+  fibrosis_markers:
+    - "COL1A1"  # Collagen I
+    - "ACTA2"   # α-SMA
+    - "CTGF"    # Connective tissue growth factor
+    - "TGF-beta1"
+    - "FN1"     # Fibronectin
+
+  inflammation_markers:
+    - "IL6"
+    - "TNF"
+    - "NFKB1"
+    - "CCL2"
+    - "ICAM1"
+
+# Intervention-specific parameters
+interventions:
+  OSK:
+    efficiency: 0.60
+    safety_profile: "high_risk"
+    optimal_dose: 0.6
+    duration_weeks: 2
+    cyclic_recommended: true
+    special_considerations: "nephrotoxicity_risk"
+
+  OSKM:
+    efficiency: 0.70
+    safety_profile: "very_high_risk"
+    optimal_dose: 0.4
+    duration_weeks: 1
+    cyclic_recommended: true
+    oncogene_risk: "MYC"
+
+  senolytic:
+    efficiency: 0.90
+    safety_profile: "low_risk"
+    optimal_dose: 1.2
+    duration_weeks: 1
+    cyclic_recommended: false
+    preferred_method: true
+
+# Delivery methods for kidney
+delivery:
+  AAV:
+    tropism: "moderate"
+    serotype: "AAV6"
+    efficiency: 0.7
+    immunogenicity: "low"
+    renal_specific: true
+
+  LNP:
+    tropism: "high"
+    efficiency: 0.85
+    immunogenicity: "very_low"
+    renal_clearance: "fast"
+
+  hydrodynamic_injection:
+    tropism: "very_high"
+    efficiency: 0.95
+    invasiveness: "moderate"
+    kidney_specific: true
+
+# Kidney-specific safety considerations
+safety:
+  critical_functions:
+    - "glomerular_filtration"
+    - "tubular_secretion"
+    - "acid_base_balance"
+    - "electrolyte_homeostasis"
+
+  essential_pathways:
+    - "renin_angiotensin_system"
+    - "sodium_potassium_balance"
+    - "calcium_phosphate_metabolism"
+    - "erythropoietin_production"
+
+  contraindications:
+    - "acute_kidney_injury"
+    - "chronic_kidney_disease_stage_5"
+    - "active_nephritis"
+    - "kidney_transplant_recipient"
+
+  monitoring_requirements:
+    - "serum_creatinine"
+    - "blood_urea_nitrogen"
+    - "glomerular_filtration_rate"
+    - "proteinuria"
+    - "electrolyte_panel"
+    - "renal_biopsy"
+
+# Expected outcomes
+expected_outcomes:
+  epigenetic_clock_reversal:
+    OSK: "-1.8 ± 0.7 years"
+    OSKM: "-2.2 ± 0.9 years"
+    senolytic: "-1.4 ± 0.6 years"
+
+  functional_improvement:
+    glomerular_filtration_rate: "moderate"
+    proteinuria_reduction: "significant"
+    fibrosis_reduction: "modest"
+
+  risks:
+    nephrotoxicity: "moderate"
+    acute_kidney_injury: "low"
+    electrolyte_imbalance: "low"
+
+# Renal-specific biomarkers
+biomarkers:
+  efficacy:
+    - "estimated_GFR"
+    - "albumin_creatinine_ratio"
+    - "cystatin_C"
+    - "kidney_injury_molecule_1"
+
+  safety:
+    - "serum_creatinine"
+    - "blood_urea_nitrogen"
+    - "electrolyte_abnormalities"
+    - "proteinuria_progression"
+
+# Age-related changes
+age_related_changes:
+  structural:
+    - "glomerulosclerosis"
+    - "tubular_atrophy"
+    - "interstitial_fibrosis"
+    - "vascular_sclerosis"
+
+  functional:
+    - "decreased_GFR"
+    - "reduced_concentrating_ability"
+    - "impaired_sodium_handling"
+    - "altered_drug_clearance"

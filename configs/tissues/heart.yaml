@@ -1,0 +1,144 @@
+# Heart-specific configuration for aging interventions
+
+tissue:
+  name: "heart"
+  description: "Cardiac tissue configuration for aging research"
+  characteristics:
+    regenerative_capacity: "very_low"
+    metabolic_activity: "very_high"
+    senescence_susceptibility: "high"
+    inflammation_prone: true
+    contractility_dependent: true
+
+# Gene expression signatures specific to heart aging
+expression_signatures:
+  cardiac_senescence:
+    - "CDKN2A"  # p16
+    - "CDKN1A"  # p21
+    - "TP53"
+    - "ACTA2"   # α-SMA
+    - "COL1A1"  # Fibrosis marker
+
+  cardiac_function:
+    - "MYH7"    # β-myosin heavy chain
+    - "TNNT2"   # Troponin T
+    - "MYBPC3"  # Myosin binding protein C
+    - "ACTC1"   # Cardiac actin
+    - "RYR2"    # Ryanodine receptor
+
+  metabolic_regulators:
+    - "PPARGC1A"  # PGC-1α
+    - "SIRT1"
+    - "FOXO1"
+    - "MTOR"
+    - "PRKAA1"  # AMPK
+
+  inflammation_markers:
+    - "IL6"
+    - "TNF"
+    - "NFKB1"
+    - "CCL2"
+    - "NLRP3"
+
+# Intervention-specific parameters (very conservative)
+interventions:
+  OSK:
+    efficiency: 0.45
+    safety_profile: "very_high_risk"
+    optimal_dose: 0.3
+    duration_weeks: 1
+    cyclic_recommended: true
+    special_considerations: "arrhythmia_risk"
+    contraindicated_conditions: ["heart_failure", "arrhythmias"]
+
+  OSKM:
+    efficiency: 0.55
+    safety_profile: "extremely_high_risk"
+    optimal_dose: 0.2
+    duration_weeks: 1
+    contraindicated: true  # Too risky for heart
+
+  senolytic:
+    efficiency: 0.85
+    safety_profile: "moderate_risk"
+    optimal_dose: 1.0
+    duration_weeks: 1
+    cyclic_recommended: false
+    preferred_method: true
+
+# Delivery methods for heart
+delivery:
+  AAV:
+    tropism: "high"
+    serotype: "AAV9"
+    efficiency: 0.8
+    immunogenicity: "low"
+    cardiac_specific: true
+
+  LNP:
+    tropism: "moderate"
+    efficiency: 0.6
+    immunogenicity: "low"
+    cardiac_delivery: "limited"
+
+  direct_injection:
+    tropism: "very_high"
+    efficiency: 0.95
+    invasiveness: "high"
+    precision_required: true
+
+# Heart-specific safety considerations
+safety:
+  critical_functions:
+    - "cardiac_rhythm"
+    - "contractility"
+    - "electrical_conduction"
+    - "vascular_integrity"
+
+  essential_pathways:
+    - "calcium_signaling"
+    - "energy_metabolism"
+    - "cardiac_development"
+    - "ion_channel_function"
+
+  contraindications:
+    - "active_myocardial_infarction"
+    - "severe_heart_failure"
+    - "life_threatening_arrhythmias"
+    - "cardiac_transplant_recipient"
+
+  monitoring_requirements:
+    - "ECG_continuous"
+    - "echocardiogram"
+    - "cardiac_enzymes"
+    - "arrhythmia_monitoring"
+    - "blood_pressure"
+
+# Expected outcomes (conservative estimates)
+expected_outcomes:
+  epigenetic_clock_reversal:
+    OSK: "-1.0 ± 0.5 years"
+    senolytic: "-0.8 ± 0.4 years"
+
+  functional_improvement:
+    ejection_fraction: "minimal"
+    diastolic_function: "modest"
+    exercise_capacity: "moderate"
+
+  risks:
+    arrhythmia: "moderate"
+    contractile_dysfunction: "low"
+    fibrosis_progression: "low"
+
+# Cardiac-specific biomarkers
+biomarkers:
+  efficacy:
+    - "NT-proBNP"
+    - "troponin_I"
+    - "cardiac_MRI"
+    - "stress_test"
+
+  safety:
+    - "ECG_changes"
+    - "arrhythmia_burden"
+    - "wall_motion_abnormalities"
