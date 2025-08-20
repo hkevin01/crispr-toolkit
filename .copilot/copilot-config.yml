@@ -1,0 +1,88 @@
+project:
+  name: "CRISPR Toolkit"
+  description: "AI/ML toolkit for CRISPR gene editing analysis with focus on aging research"
+  domain: "bioinformatics"
+
+copilot:
+  suggestions:
+    enabled: true
+    max_suggestions: 10
+
+  chat:
+    enabled: true
+    context_awareness: true
+
+  context:
+    include_patterns:
+      - "*.py"
+      - "*.java"
+      - "*.cpp"
+      - "*.h"
+      - "*.hpp"
+      - "*.md"
+      - "*.yml"
+      - "*.yaml"
+      - "*.json"
+
+    exclude_patterns:
+      - "*.pyc"
+      - "__pycache__/*"
+      - "node_modules/*"
+      - "*.log"
+      - "data/raw/*"
+      - "models/trained/*"
+
+    priority_files:
+      - "src/crispr_toolkit/"
+      - "docs/"
+      - "tests/"
+      - "README.md"
+      - "requirements.txt"
+
+  terminology:
+    domain_specific:
+      - "CRISPR"
+      - "Cas9"
+      - "gRNA"
+      - "guide RNA"
+      - "PAM"
+      - "HDR"
+      - "NHEJ"
+      - "off-target"
+      - "on-target"
+      - "senescence"
+      - "aging"
+      - "rejuvenation"
+      - "epigenetic"
+      - "methylation"
+      - "OSK"
+      - "reprogramming"
+      - "biomarker"
+      - "longevity"
+
+  coding_standards:
+    python:
+      style: "black"
+      line_length: 88
+      type_hints: true
+      docstring_style: "google"
+
+    java:
+      style: "google"
+      naming_convention: "camelCase"
+
+    cpp:
+      style: "google"
+      naming_convention: "snake_case"
+
+  preferences:
+    code_generation:
+      include_tests: true
+      include_docstrings: true
+      error_handling: true
+      type_safety: true
+
+    documentation:
+      include_examples: true
+      scientific_references: true
+      parameter_descriptions: true

@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Literature Entry Schema",
+  "description": "Schema for CRISPR and aging literature entries",
+  "type": "object",
+  "required": ["id", "title", "authors", "year"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (DOI, PMID, or arXiv ID)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Paper title"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of author names"
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2030,
+      "description": "Publication year"
+    },
+    "venue": {
+      "type": "string",
+      "description": "Journal or conference name"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the paper"
+    },
+    "lab": {
+      "type": "string",
+      "description": "Corresponding author affiliation"
+    },
+    "organism": {
+      "type": "string",
+      "enum": ["human", "mouse", "rat", "yeast", "worm", "fly", "other"],
+      "description": "Model organism used"
+    },
+    "tissue": {
+      "type": "string",
+      "description": "Target tissue or cell type"
+    },
+    "intervention": {
+      "type": "string",
+      "enum": [
+        "OSK", "OSKM", "dCas9-TET", "dCas9-KRAB", "dCas9-p300",
+        "base_edit", "prime_edit", "DdCBE", "CRISPRa", "CRISPRi", "other"
+      ],
+      "description": "Type of CRISPR intervention"
+    },
+    "delivery": {
+      "type": "string",
+      "enum": ["AAV", "LNP", "lentivirus", "electroporation", "other"],
+      "description": "Delivery method"
+    },
+    "data_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "bulk_rna", "scrna", "atac", "methylation",
+          "proteomics", "metabolomics", "phenotyping"
+        ]
+      },
+      "description": "Types of data generated"
+    },
+    "outcomes": {
+      "type": "object",
+      "properties": {
+        "clock_delta": {
+          "type": "number",
+          "description": "Change in epigenetic clock age (years)"
+        },
+        "senescence_markers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Senescence markers measured"
+        },
+        "functional_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Functional improvements observed"
+        },
+        "safety_events": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Safety concerns or adverse events"
+        }
+      }
+    },
+    "datasets": {
+      "type": "object",
+      "properties": {
+        "geo_accessions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sra_accessions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or comments"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Categorization tags"
+    }
+  }
+}

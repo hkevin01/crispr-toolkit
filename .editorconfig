@@ -1,0 +1,41 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{py,pyi}]
+indent_size = 4
+max_line_length = 88
+
+[*.{java}]
+indent_size = 2
+max_line_length = 100
+
+[*.{cpp,cc,cxx,c,h,hpp,hxx}]
+indent_size = 2
+max_line_length = 100
+
+[*.{js,ts,jsx,tsx}]
+indent_size = 2
+max_line_length = 100
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.{json}]
+indent_size = 2
+
+[*.{md,rst}]
+trim_trailing_whitespace = false
+max_line_length = 80
+
+[Makefile]
+indent_style = tab
+
+[*.{sh,bash}]
+indent_size = 2
