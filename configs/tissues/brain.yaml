@@ -1,0 +1,127 @@
+# Brain-specific configuration for aging interventions
+
+tissue:
+  name: "brain"
+  description: "Neural tissue configuration for aging research"
+  characteristics:
+    regenerative_capacity: "very_low"
+    metabolic_activity: "high"
+    senescence_susceptibility: "high"
+    inflammation_prone: true
+    blood_brain_barrier: true
+
+# Gene expression signatures specific to brain aging
+expression_signatures:
+  neuronal_senescence:
+    - "CDKN2A"  # p16
+    - "CDKN1A"  # p21
+    - "TP53"
+    - "MAPT"    # Tau
+    - "APP"     # Amyloid precursor
+
+  neurodegeneration_markers:
+    - "SNCA"    # α-synuclein
+    - "HTT"     # Huntingtin
+    - "SOD1"
+    - "TDP43"
+
+  inflammation_markers:
+    - "IL1B"
+    - "TNF"
+    - "GFAP"    # Astrocyte marker
+    - "IBA1"    # Microglia marker
+
+  synaptic_function:
+    - "SYN1"
+    - "SNAP25"
+    - "PSD95"
+    - "BDNF"
+
+# Intervention-specific parameters (more conservative)
+interventions:
+  OSK:
+    efficiency: 0.65
+    safety_profile: "high_risk"
+    optimal_dose: 0.5
+    duration_weeks: 2
+    cyclic_recommended: true
+    special_considerations: "neuronal_differentiation_risk"
+
+  OSKM:
+    efficiency: 0.75
+    safety_profile: "very_high_risk"
+    optimal_dose: 0.3
+    duration_weeks: 1
+    cyclic_recommended: true
+    contraindicated: true  # Too risky for brain
+
+  senolytic:
+    efficiency: 0.8
+    safety_profile: "moderate_risk"
+    optimal_dose: 0.8
+    duration_weeks: 1
+    cyclic_recommended: false
+    preferred_method: true
+
+# Delivery methods for brain (BBB crossing)
+delivery:
+  AAV:
+    tropism: "moderate"
+    serotype: "AAV9"
+    efficiency: 0.7
+    immunogenicity: "low"
+    bbb_crossing: true
+
+  LNP:
+    tropism: "low"
+    efficiency: 0.4
+    immunogenicity: "low"
+    bbb_crossing: "limited"
+
+  focused_ultrasound:
+    tropism: "targeted_high"
+    efficiency: 0.9
+    invasiveness: "minimal"
+    temporal_opening: true
+
+# Brain-specific safety considerations
+safety:
+  critical_regions:
+    - "brainstem"
+    - "motor_cortex"
+    - "hippocampus"
+    - "cerebellum"
+
+  essential_pathways:
+    - "neurotransmission"
+    - "synaptic_plasticity"
+    - "neuronal_survival"
+    - "glial_function"
+
+  contraindications:
+    - "active_neuroinflammation"
+    - "blood_brain_barrier_disruption"
+    - "seizure_history"
+    - "brain_tumor"
+
+  monitoring_markers:
+    - "neurofilament_light"
+    - "tau_protein"
+    - "glial_markers"
+    - "cognitive_tests"
+
+# Expected outcomes (more modest)
+expected_outcomes:
+  epigenetic_clock_reversal:
+    OSK: "-1.5 ± 0.6 years"
+    senolytic: "-1.0 ± 0.4 years"
+
+  functional_improvement:
+    cognitive_function: "modest"
+    neuroinflammation: "significant"
+    synaptic_density: "moderate"
+
+  risks:
+    dedifferentiation: "moderate"
+    tumor_formation: "low"
+    cognitive_disruption: "low"

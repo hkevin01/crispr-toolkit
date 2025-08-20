@@ -1,0 +1,100 @@
+# Liver-specific configuration for aging interventions
+
+tissue:
+  name: "liver"
+  description: "Hepatic tissue configuration for aging research"
+  characteristics:
+    regenerative_capacity: "high"
+    metabolic_activity: "very_high"
+    senescence_susceptibility: "moderate"
+    inflammation_prone: true
+
+# Gene expression signatures specific to liver aging
+expression_signatures:
+  senescence_markers:
+    - "CDKN2A"  # p16
+    - "CDKN1A"  # p21
+    - "TP53"
+    - "GLB1"    # SA-β-gal
+
+  metabolic_regulators:
+    - "SIRT1"
+    - "PPARGC1A"  # PGC-1α
+    - "FOXO1"
+    - "MTOR"
+    - "AMPK"
+
+  inflammation_markers:
+    - "IL6"
+    - "TNF"
+    - "NFKB1"
+    - "CXCL1"
+
+# Intervention-specific parameters
+interventions:
+  OSK:
+    efficiency: 0.85
+    safety_profile: "moderate_risk"
+    optimal_dose: 1.2
+    duration_weeks: 4
+    cyclic_recommended: true
+
+  OSKM:
+    efficiency: 0.92
+    safety_profile: "high_risk"
+    optimal_dose: 0.8
+    duration_weeks: 2
+    cyclic_recommended: true
+    oncogene_risk: "MYC"
+
+  senolytic:
+    efficiency: 0.75
+    safety_profile: "low_risk"
+    optimal_dose: 1.5
+    duration_weeks: 1
+    cyclic_recommended: false
+
+# Delivery methods optimized for liver
+delivery:
+  AAV:
+    tropism: "high"
+    serotype: "AAV8"
+    efficiency: 0.9
+    immunogenicity: "low"
+
+  LNP:
+    tropism: "very_high"
+    efficiency: 0.95
+    immunogenicity: "very_low"
+    clearance_rate: "fast"
+
+# Tissue-specific safety considerations
+safety:
+  essential_pathways:
+    - "glucose_metabolism"
+    - "lipid_metabolism"
+    - "detoxification"
+    - "protein_synthesis"
+
+  contraindications:
+    - "severe_fibrosis"
+    - "active_hepatitis"
+    - "hepatocellular_carcinoma"
+
+  monitoring_markers:
+    - "ALT"
+    - "AST"
+    - "bilirubin"
+    - "albumin"
+
+# Expected outcomes
+expected_outcomes:
+  epigenetic_clock_reversal:
+    OSK: "-2.5 ± 0.8 years"
+    OSKM: "-3.2 ± 1.2 years"
+    senolytic: "-1.5 ± 0.5 years"
+
+  functional_improvement:
+    glucose_tolerance: "moderate"
+    lipid_profile: "significant"
+    regenerative_capacity: "high"

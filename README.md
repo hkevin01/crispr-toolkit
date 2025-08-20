@@ -1,26 +1,47 @@
-# CRISPR Toolkit
-
-![CRISPR Toolkit Logo](assets/logo.png)
+# CRISPR Toolkit for Aging Research
 
 [![CI/CD Pipeline](https://github.com/username/crispr-toolkit/workflows/CI/badge.svg)](https://github.com/username/crispr-toolkit/actions)
 [![Documentation Status](https://readthedocs.org/projects/crispr-toolkit/badge/?version=latest)](https://crispr-toolkit.readthedocs.io/en/latest/?badge=latest)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An advanced AI/ML-powered platform for CRISPR gene editing analysis with specialized focus on aging research and rejuvenation applications.
+An advanced AI/ML-powered platform for CRISPR gene editing analysis with specialized focus on aging research, senescence interventions, and cellular rejuvenation applications.
 
 ## 🎯 Project Overview
 
-The CRISPR Toolkit combines cutting-edge machine learning techniques with comprehensive CRISPR analysis capabilities to accelerate research in longevity and age-related interventions. It provides researchers with tools for guide design, target prioritization, outcome prediction, and large-scale analysis of CRISPR screens.
+The CRISPR Toolkit is a comprehensive platform that combines cutting-edge machine learning with aging biology expertise to accelerate research in longevity and age-related interventions. Our platform enables researchers to:
 
-### Key Features
+- **Prioritize CRISPR targets** for aging interventions using multi-modal ML models
+- **Predict rejuvenation outcomes** from genetic interventions with confidence intervals
+- **Analyze tissue-specific effects** of senescence and reprogramming interventions
+- **Mine literature** for aging-related CRISPR research insights
+- **Design experiments** with tissue and intervention-specific parameters
 
-- **🎯 AI-Powered Target Prioritization**: Intelligent ranking of CRISPR targets based on aging pathways and biological context
-- **🔮 Rejuvenation Prediction**: Machine learning models to predict outcomes of anti-aging interventions
-- **📊 Screen Analysis**: Comprehensive analysis of CRISPR screens with focus on senescence and aging pathways
-- **📚 Literature Mining**: Automated extraction and integration of CRISPR-aging research literature
-- **🧬 Guide Design**: Advanced algorithms for guide RNA design with aging-specific considerations
-- **📈 Visualization**: Interactive dashboards and plots for research insights
+## 🌟 Key Features
+
+### 🎯 AI-Powered Target Prioritization
+- **LightGBM learning-to-rank** model for target gene prioritization
+- **Multi-modal features**: Expression, chromatin, literature, network data
+- **Tissue-specific scoring**: Liver, brain, muscle, skin optimization
+- **Phenotype-aware ranking**: Senescence, reprogramming, DNA repair pathways
+
+### 🔮 Rejuvenation Outcome Prediction
+- **Multi-task models** predicting epigenetic clock changes, functional improvement, safety risks
+- **Intervention-specific predictions**: OSK, OSKM, senolytic, base editing
+- **Uncertainty quantification** with confidence intervals
+- **Context-aware modeling**: Age, tissue, baseline senescence load
+
+### 📊 Comprehensive Analysis Pipeline
+- **Expression analysis** for aging markers and pathway enrichment
+- **Literature mining** with PubMed integration and knowledge graphs
+- **Safety assessment** with oncogene and essential gene risk scoring
+- **Dose-response modeling** for intervention optimization
+
+### � Experimental Design Support
+- **Tissue configurations**: Pre-configured parameters for liver, brain, muscle
+- **Intervention protocols**: OSK reprogramming, senolytic treatment guidelines
+- **Delivery optimization**: AAV, LNP, and other delivery method parameters
+- **Safety monitoring**: Biomarker tracking and risk assessment protocols
 
 ## 🚀 Quick Start
 
