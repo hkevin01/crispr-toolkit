@@ -1,0 +1,47 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crispr-toolkit-api
+  labels:
+    app: crispr-toolkit
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: crispr-toolkit
+  template:
+    metadata:
+      labels:
+        app: crispr-toolkit
+    spec:
+      containers:
+      - name: api
+        image: crispr-toolkit:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: API_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: crispr-secrets
+              key: api-token
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5

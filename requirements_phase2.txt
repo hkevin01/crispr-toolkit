@@ -1,0 +1,115 @@
+# Phase 2 Production Requirements for CRISPR Toolkit
+
+# Core Phase 2 dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+httpx==0.25.2
+python-multipart==0.0.6
+
+# Authentication and security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+cryptography==41.0.7
+
+# Database and storage
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+redis==5.0.1
+
+# Scientific computing (existing)
+pandas==2.1.3
+numpy==1.24.3
+scipy==1.11.4
+scikit-learn==1.3.2
+
+# Machine learning and validation
+mlflow==2.8.1
+optuna==3.4.0
+xgboost==2.0.2
+lightgbm==4.1.0
+
+# Statistical analysis
+statsmodels==0.14.0
+seaborn==0.13.0
+matplotlib==3.8.2
+
+# Data processing and validation
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Monitoring and logging
+prometheus-client==0.19.0
+structlog==23.2.0
+elasticsearch==8.11.0
+
+# Cloud deployment
+docker==6.1.3
+kubernetes==28.1.0
+boto3==1.34.0  # AWS SDK
+google-cloud-storage==2.10.0  # Google Cloud
+azure-storage-blob==12.19.0  # Azure
+
+# Development and testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Documentation
+sphinx==7.2.6
+sphinx-rtd-theme==1.3.0
+
+# Jupyter and notebooks
+jupyter==1.0.0
+jupyterlab==4.0.9
+ipywidgets==8.1.1
+
+# Regulatory and clinical
+openpyxl==3.1.2  # Excel file handling for regulatory documents
+python-docx==1.1.0  # Word document generation for reports
+reportlab==4.0.7  # PDF generation for clinical reports
+
+# Network and API clients
+aiohttp==3.9.1
+websockets==12.0
+
+# Configuration management
+pyyaml==6.0.1
+python-dotenv==1.0.0
+configparser==6.0.0
+
+# Performance optimization
+numba==0.58.1
+cython==3.0.6
+
+# Data visualization for clinical reports
+plotly==5.17.0
+bokeh==3.3.2
+
+# Bioinformatics specific
+biopython==1.81
+pysam==0.22.0
+
+# Image processing (for figure generation)
+pillow==10.1.0
+
+# Date and time handling
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Parallel processing
+joblib==1.3.2
+dask==2023.12.0
+
+# Memory profiling and optimization
+memory-profiler==0.61.0
+psutil==5.9.6
+
+# Version management
+packaging==23.2
+setuptools==69.0.2
+wheel==0.42.0
