@@ -11,10 +11,20 @@ __email__ = "contact@crisprToolkit.org"
 
 from .analysis.aging.rejuvenation_prediction import predict_rejuvenation
 from .analysis.aging.target_prioritization import prioritize_targets
+from .analysis.screens import (
+    MAGeCKAnalyzer,
+    PathwayEnrichment,
+    ScreenQualityControl,
+    SenescenceScreenAnalyzer,
+)
 from .cli.aging_cli import main as aging_cli_main
 
 __all__ = [
     "prioritize_targets",
     "predict_rejuvenation",
     "aging_cli_main",
+    "MAGeCKAnalyzer",
+    "ScreenQualityControl",
+    "PathwayEnrichment",
+    "SenescenceScreenAnalyzer"
 ]
