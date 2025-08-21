@@ -358,4 +358,3 @@ class MAGeCKAnalyzer:
             'rank_plot': rank_data,
             'quality_metrics': results.quality_metrics
         }
-        }
