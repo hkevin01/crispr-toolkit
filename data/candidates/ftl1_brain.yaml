@@ -1,0 +1,25 @@
+# FTL1 Brain Aging Candidate (Provisional)
+gene_symbol: FTL1
+human_ortholog: FTL
+ensembl_ids:
+  mouse: ENSMUSG_TBA
+  human: ENSG_TBA
+uniprot: TBA
+pathway_tags:
+  - iron_homeostasis
+  - oxidative_stress
+  - ferroptosis
+study_source: UCSF press summary, Aug 20, 2025
+evidence_status: provisional
+observed_effects:
+  - memory_reversal
+  - synaptic_strength_increase
+  - cell_metabolism_restoration
+intervention_mode: blocking (antibody/ASO? TBA)
+crispr_strategy: CRISPRi@TSS, allele-specific optional
+safety_flags:
+  - essentiality_risk
+  - systemic_iron_imbalance
+references:
+  - DOI: TBA
+    PMID: TBA

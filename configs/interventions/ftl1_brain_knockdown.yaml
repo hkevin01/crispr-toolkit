@@ -1,0 +1,25 @@
+# FTL1 Brain Knockdown (Provisional, UCSF 2025-08-20)
+intervention: CRISPRi
+tissue: brain
+targets:
+  - FTL1
+species: mouse
+human_ortholog: FTL
+expected_direction: decrease_expression
+outcomes:
+  - delta_epigenetic_age
+  - delta_SASP_index
+  - safety_probability
+features:
+  - expression
+  - network
+  - literature
+  - editability
+  - off_target
+safety_notes: |
+  Iron homeostasis; neuron/astrocyte specificity recommended; caution with systemic knockdown.
+provisional: true
+references:
+  - source: UCSF press summary, Aug 20, 2025
+    doi: TBA
+    pmid: TBA
