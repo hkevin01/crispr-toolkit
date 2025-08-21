@@ -55,8 +55,14 @@ except ImportError:
     SenescenceClassifier = None
     SENESCENCE_AVAILABLE = False
 
+try:
+    from .multi_omics_integrator import MultiOmicsIntegrator
+    MULTIOMICS_AVAILABLE = True
+except ImportError:
+    MultiOmicsIntegrator = None
+    MULTIOMICS_AVAILABLE = False
+
 # Planned components (not yet implemented)
-MultiOmicsIntegrator = None
 ClinicalTranslator = None
 
 # Export available components
@@ -73,6 +79,9 @@ if AI_DISCOVERY_AVAILABLE:
 
 if SENESCENCE_AVAILABLE:
     __all__.append('SenescenceClassifier')
+
+if MULTIOMICS_AVAILABLE:
+    __all__.append('MultiOmicsIntegrator')
 
 __all__.extend([
     'get_available_components', 'get_component_info', '__version__'
@@ -96,6 +105,9 @@ def get_available_components():
 
     if SENESCENCE_AVAILABLE:
         available.append('SenescenceClassifier')
+
+    if MULTIOMICS_AVAILABLE:
+        available.append('MultiOmicsIntegrator')
 
     return available
 
@@ -143,7 +155,7 @@ def get_component_info():
                 ]
             },
             'SenescenceClassifier': {
-                'status': 'planned',
+                'status': 'implemented' if SENESCENCE_AVAILABLE else 'import_error',
                 'description': 'Advanced senescence detection and classification',
                 'features': [
                     'Multi-modal senescence scoring',
@@ -153,13 +165,14 @@ def get_component_info():
                 ]
             },
             'MultiOmicsIntegrator': {
-                'status': 'planned',
+                'status': 'implemented' if MULTIOMICS_AVAILABLE else 'import_error',
                 'description': 'Multi-omics aging data integration',
                 'features': [
-                    'Cross-omics aging signatures',
-                    'Pathway-level aging analysis',
-                    'Network-based aging modules',
-                    'Regulatory aging circuits'
+                    'MOFA+ factor analysis',
+                    'SOFA semi-supervised integration',
+                    'Deep learning fusion',
+                    '12 Hallmarks of Aging analysis',
+                    'Cross-platform biomarker discovery'
                 ]
             },
             'ClinicalTranslator': {
@@ -246,6 +259,17 @@ def demo_advanced_aging():
             demo_senescence_classifier()
         except Exception as e:
             print(f"❌ Senescence demo failed: {e}")
+
+    if MULTIOMICS_AVAILABLE:
+        print("\n" + "="*50)
+        print("🧬 Multi-Omics Integration Demo")
+        print("="*50)
+        try:
+            from .multi_omics_integrator import MultiOmicsIntegrator
+            integrator = MultiOmicsIntegrator(integration_method='mofa_plus')
+            integrator.demo_analysis()
+        except Exception as e:
+            print(f"❌ Multi-omics demo failed: {e}")
 
     print("\n" + "="*50)
     print("🎉 Phase 2B Demo Complete!")
