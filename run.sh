@@ -91,14 +91,14 @@ run_simple_tests() {
 run_clinical_demo() {
     echo -e "${YELLOW}🏥 Running clinical translator demo...${NC}"
     activate_venv
-    python tests/test_clinical_translator.py
+    python tests/clinical/test_clinical_translator.py
     echo -e "${GREEN}✅ Clinical demo complete!${NC}"
 }
 
 run_aging_analysis() {
     echo -e "${YELLOW}🧬 Running aging biomarker analysis...${NC}"
     activate_venv
-    python tests/test_senescence_demo.py
+    python tests/demos/test_senescence_demo.py
     echo -e "${GREEN}✅ Aging analysis complete!${NC}"
 }
 
@@ -119,13 +119,10 @@ generate_docs() {
 
 clean_project() {
     echo -e "${YELLOW}🧹 Cleaning up temporary files...${NC}"
-    rm -rf __pycache__/
-    rm -rf .pytest_cache/
-    rm -rf .mypy_cache/
-    rm -rf *.egg-info/
-    find . -name "*.pyc" -delete
-    find . -name "*.pyo" -delete
-    find . -name "__pycache__" -type d -exec rm -rf {} +
+    find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
+    find . -name "*.pyc" -delete 2>/dev/null || true
+    find . -name "*.pyo" -delete 2>/dev/null || true
+    rm -rf .pytest_cache/ .mypy_cache/ *.egg-info/ 2>/dev/null || true
     echo -e "${GREEN}✅ Cleanup complete!${NC}"
 }
 

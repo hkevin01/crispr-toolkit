@@ -7,7 +7,7 @@ Tests the complete MAGeCK integration for the CRISPR Toolkit
 import os
 import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
 def test_imports():
     """Test that all MAGeCK integration modules can be imported."""

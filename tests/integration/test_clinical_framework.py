@@ -13,7 +13,7 @@ import sys
 from datetime import datetime
 
 # Add src to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
 from crispr_toolkit.clinical.adaptive_trials import create_adaptive_trial_demo
 from crispr_toolkit.clinical.adverse_events import create_ae_detection_demo

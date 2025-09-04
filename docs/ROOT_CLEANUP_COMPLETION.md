@@ -3,10 +3,11 @@
 ## ✅ TODO LIST STATUS
 
 - [x] **Move Python test files to organized directories**
-  - [x] Clinical tests → `/tests/clinical/`
-  - [x] Demo tests → `/tests/demos/`
-  - [x] Integration tests → `/tests/integration/`
-  - [x] Total: 15+ test files organized
+  - [x] Clinical tests → `/tests/clinical/` (3 files)
+  - [x] Demo tests → `/tests/demos/` (4 files)
+  - [x] Integration tests → `/tests/integration/` (2 files)
+  - [x] Script tests → `/tests/scripts/` (8 files)
+  - [x] Total: 17+ test files organized
 
 - [x] **Move source files to proper module locations**
   - [x] clinical_translator.py → `/src/crispr_toolkit/clinical/`

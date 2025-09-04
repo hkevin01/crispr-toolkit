@@ -76,7 +76,7 @@ def run_final_integration_test():
         # Test simple clinical translator
         import subprocess
         result = subprocess.run([
-            'python3', '/home/kevin/Projects/crispr-toolkit/tests/test_clinical_translator.py'
+            'python3', '/home/kevin/Projects/crispr-toolkit/tests/clinical/test_clinical_translator.py'
         ], capture_output=True, text=True, cwd='/home/kevin/Projects/crispr-toolkit')
 
         if result.returncode == 0 and "✅ FUNCTIONAL" in result.stdout:
