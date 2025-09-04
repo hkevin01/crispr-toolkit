@@ -76,14 +76,14 @@ setup() {
 run_tests() {
     echo -e "${YELLOW}🧪 Running comprehensive test suite...${NC}"
     activate_venv
-    python scripts/final_integration_test.py
+    python tests/scripts/final_integration_test.py
     echo -e "${GREEN}✅ Tests complete!${NC}"
 }
 
 run_simple_tests() {
     echo -e "${YELLOW}🧪 Running simple functionality tests...${NC}"
     activate_venv
-    python tests/integration/quick_test.py
+    python tests/scripts/quick_test.py
     echo -e "${GREEN}✅ Simple tests complete!${NC}"
 }
 
@@ -91,14 +91,14 @@ run_simple_tests() {
 run_clinical_demo() {
     echo -e "${YELLOW}🏥 Running clinical translator demo...${NC}"
     activate_venv
-    python tests/clinical/test_clinical_translator.py
+    python tests/test_clinical_translator.py
     echo -e "${GREEN}✅ Clinical demo complete!${NC}"
 }
 
 run_aging_analysis() {
     echo -e "${YELLOW}🧬 Running aging biomarker analysis...${NC}"
     activate_venv
-    python tests/demos/test_senescence_demo.py
+    python tests/test_senescence_demo.py
     echo -e "${GREEN}✅ Aging analysis complete!${NC}"
 }
 
