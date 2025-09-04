@@ -2,16 +2,20 @@ version: "3.8"
 
 services:
   web:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ..:/app
       - /app/venv
     environment:
       - PYTHONPATH=/app/src
-      - DATABASE_URL=postgresql://crispr:password@db:5432/crispr_toolkit
-      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=${DATABASE_URL:-postgresql://crispr:password@db:5432/crispr_toolkit}
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - CRISPR_ENV=${CRISPR_ENV:-development}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
     depends_on:
       - db
       - redis
@@ -20,9 +24,9 @@ services:
   db:
     image: postgres:14
     environment:
-      - POSTGRES_DB=crispr_toolkit
-      - POSTGRES_USER=crispr
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=${POSTGRES_DB:-crispr_toolkit}
+      - POSTGRES_USER=${POSTGRES_USER:-crispr}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -36,16 +40,20 @@ services:
       - redis_data:/data
 
   jupyter:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     ports:
       - "8888:8888"
     volumes:
-      - .:/app
+      - ..:/app
       - /app/venv
     environment:
       - PYTHONPATH=/app/src
+      - CRISPR_ENV=${CRISPR_ENV:-development}
     command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=/app
 
 volumes:
   postgres_data:
+  redis_data:
   redis_data:

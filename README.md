@@ -55,14 +55,14 @@ The CRISPR Toolkit is a comprehensive platform that combines cutting-edge machin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/username/crispr-toolkit.git
+   git clone https://github.com/hkevin01/crispr-toolkit.git
    cd crispr-toolkit
    ```
 
 2. **Set up development environment**
    ```bash
-   chmod +x scripts/setup.sh
-   ./scripts/setup.sh
+   chmod +x run.sh
+   ./run.sh setup
    ```
 
 3. **Activate the environment**
@@ -99,6 +99,7 @@ crispr-aging screens analyze --counts data/screen_counts.csv --output results/sc
 
 ```
 crispr-toolkit/
+├── run.sh                      # Main automation script
 ├── src/
 │   └── crispr_toolkit/          # Main package
 │       ├── analysis/            # Analysis modules
@@ -113,8 +114,13 @@ crispr-toolkit/
 │       ├── cli/                # Command-line interfaces
 │       └── utils/              # Utility functions
 ├── tests/                      # Test suite
+│   ├── clinical/              # Clinical tests
+│   ├── demos/                 # Demo tests
+│   ├── integration/           # Integration tests
+│   ├── scripts/               # Test scripts
+│   └── unit/                  # Unit tests
 ├── docs/                       # Documentation
-├── scripts/                    # Utility scripts
+├── docker/                     # Docker configuration
 ├── data/                       # Data directory
 ├── assets/                     # Project assets
 ├── notebooks/                  # Jupyter notebooks
